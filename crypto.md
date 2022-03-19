@@ -46,6 +46,7 @@
   - [Кошельки](#кошельки)
   - [Где хранить... а где не стоит](#где-хранить-а-где-не-стоит)
 - [Итак](#итак)
+- [Важные новости](#важные-новости)
 - [Полезные ссылки](#полезные-ссылки)
 
 ---
@@ -233,7 +234,7 @@
 Прецеденты:
 - Американская биржа Coinbase [объявила о блокировке более 25 тыс. кошельков](https://twitter.com/brian_armstrong/status/1499621509651787782?s=20&t=zGROkm-WKH5Ja6f6LR7BwA), связанных с российскими гражданами и компаниями из американских санкционных списков OFAC [4]
 - Американская биржа Kraken, несмотря на [просьбы со стороны украинских властей, **отказалась** блокировать российские аккаунты](https://twitter.com/jespow/status/1498112741684363265?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1498112741684363265%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fcryptocurrency.tech%2Famerikanskaya-kriptobirzha-kraken-my-zablokiruem-scheta-rossiyan-v-sluchae-polucheniya-yuridicheskogo-trebovaniya%2F) без юридических оснований на это.
-- Биржа [Kuna](https://t.me/michaelchobanian/1439) и [Qmall](https://twitter.com/QmallExchange/status/1497957646531444738?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1497957646531444738%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fforklog.com%2Fplatformy-kuna-whitebit-i-cex-io-vveli-ogranicheniya-dlya-rossijskih-polzovatelej%2F) заблокировали счета жителей России, а также заморозили их активы на своей платформе.
+- Биржа [Kuna](https://t.me/michaelchobanian/1439), [BTC Alpha](https://btc-alpha.com/en/news/important-message-for-btc-alpha-users-from-all-the), [Qmall](https://twitter.com/QmallExchange/status/1497957646531444738?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1497957646531444738%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fforklog.com%2Fplatformy-kuna-whitebit-i-cex-io-vveli-ogranicheniya-dlya-rossijskih-polzovatelej%2F) заблокировали счета жителей России, а также заморозили их активы на своей платформе.
 - Биржа Binance [обещали](https://www.binance.com/en/blog/leadership/ukraine-russia-sanctions-and-crypto-421499824684903532) и делают только блокировку пользователей из санкционных списков OFAC (вне зависимости от страны резидентства). 
 - Представители биржи EXMO пообещали не блокировать доступ для всех российских пользователей, а только для лиц из санкционных списков.
 - Крупнейшие южнокорейские криптовалютные биржи Upbit, Bithumb и Korbit закрыли доступ к своим торговым платформам для россиян.
@@ -257,6 +258,13 @@
 \* На горизонте 3 лет с ребалансировкой портфеля.
 
 \** Инфляция "ест" сбержения.
+
+## Важные новости
+
+[17 марта 2022]
+
+В Конгресс США внесен законопроект, который предполагает введение санкций в отношении иностранных криптобирж, сотрудничающих с российскими юридическими лицами. Также документ позволит министру финансов блокировать транзакции российских пользователей на криптобиржах, работающих в Соединенных Штатах. Подробнее на [РБК](https://www.rbc.ru/crypto/news/62342d299a7947b1e0559784) и [Reuters](https://www.reuters.com/world/us-democrats-introduce-bill-curb-russian-crypto-use-amid-ukraine-crisis-2022-03-17/).
+
 
 ## Полезные ссылки
 
