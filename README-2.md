@@ -1,6 +1,8 @@
 # Антикризисный риск-менеджмент личных финансов
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+![Status](https://img.shields.io/badge/status-active_development-green.svg)
+[![Contributors Welcome](https://img.shields.io/badge/contributing-welcome-blue.svg)](CONTRIBUTING.md)
+[![GitHub license](https://img.shields.io/badge/license-CC0-blue.svg)](LICENSE)
 
 Цель проекта: увеличить свои шансы и шансы своих близких жить в достатке в условиях изоляции экономики (санкций) и/или финансового кризиса.
 
