@@ -24,6 +24,8 @@
   - [VPN cервисы](#vpn-cервисы)
   - [Полезные ссылки](#полезные-ссылки-3)
 - [Список софта](#список-софта)
+- [Cryptocurrency](#cryptocurrency)
+  - [Stablecoin](#stablecoin)
 
 ## Законодательные акты
 
@@ -273,3 +275,18 @@ https://tjournal.ru/tech/541799-kak-podgotovitsya-k-vozmozhnomu-otklyucheniyu-in
 - Tor Browser ([заблокирован РКН](https://blog.torproject.org/tor-censorship-in-russia/))
 - Защищенный мессенджер
 - VPN клиент.
+
+## Cryptocurrency
+
+### Stablecoin
+
+| Token | Base asset | Сentralized | Comments |
+| -- | -- | -- | -- |
+| `USDT` | USD | + | |
+| `USDC` | USD | + | |
+| `TUSD` | USD | + | |
+| `BUSD` | USD | + | |
+| `UST` | | - | |
+| `sUSD` | | - | |
+| `DAI` | | - | |
+| `FEI` | | - | |
