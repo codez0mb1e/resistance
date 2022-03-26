@@ -208,11 +208,11 @@
 
 | Token | Project/Company | Base Asset | Decentralized |  Algorithmic | Comments | Risks |
 | -- | -- | -- | -- | -- | -- | -- |
-| `UST` | Terra | USD | + | + |  | Low |
-| `sUSD` | Synthetix  | USD | + | + | | Low |
+| `UST` | Terra | USD | + | + | Риски хаков высоки | **The lowest** |
+| `sUSD` | Synthetix  | USD | + | + | Риски хаков высоки | Low |
 | `DAI` | MakerDAO | USD | + | - | [Review](https://forklog.com/chto-takoe-makerdao/) | **The lowest** | 
-| `USDT` | Tether | USD | - | - | [Review](https://vc.ru/finance/381435-udivitelnaya-istoriya-tether-usdt-lyudi-otnesli-80-milliardov-plasticheskomu-hirurgu-kotoryy-ne-garantiruet-ih-vozvrat)| Medium |
-| `USDC` | Circle | USD | - | - | | Medium |
+| `USDT` | Tether | USD | - | - | [Review](https://vc.ru/finance/381435-udivitelnaya-istoriya-tether-usdt-lyudi-otnesli-80-milliardov-plasticheskomu-hirurgu-kotoryy-ne-garantiruet-ih-vozvrat)| The highest |
+| `USDC` | Circle | USD | - | - | | The highest |
 | `TUSD` | TrueUSD | USD | - | - | | Medium |
 | `BUSD` | Binance| USD | - | - | | Medium |
 
@@ -237,7 +237,7 @@ References:
 :no_entry: На данный момент пополнение с карт **MasterCard** и **Visa** из РФ недоступно, но торги на некоторых биржах можно вести.
 
 - [Binance](https://www.binance.com) - самая крупная криптовалютная биржа ([source](https://coinmarketcap.com/ru/rankings/exchanges/)).
-- [Coinbase](https://www.coinbase.com/) - вторая по популярности, но **имеется практика блокировки кошельков** лиц из РФ.
+- [Coinbase](https://www.coinbase.com/) - вторая по популярности, но **имеется прецендент блокировки кошельков** резидентов РФ.
 
 ### Сервисы поиска обменников
 
