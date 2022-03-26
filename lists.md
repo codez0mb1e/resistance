@@ -273,8 +273,7 @@ References:
 Продвинутые пользователи могут купить хостинг (VDS) и развернуть собственный VPN сервер:
 
 - [Amnezia VPN](https://amnezia.org/) ([инструкция](https://habr.com/ru/company/amnezia/blog/546424/)) 
--  [Outline VPN](https://getoutline.org).
-
+- [Outline VPN](https://getoutline.org).
 
 ### Другие инструменты обхода блокировок
 
