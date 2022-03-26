@@ -17,11 +17,13 @@
   - [Российские почтовые сервисы](#российские-почтовые-сервисы)
   - [Иностранные почтовые сервисы](#иностранные-почтовые-сервисы)
 - [Криптовалюты](#криптовалюты)
+  - [Stablecoins](#stablecoins)
   - [Некастодиальные кошельки](#некастодиальные-кошельки)
   - [Криптобиржи](#криптобиржи)
   - [Сервисы поиска обменников](#сервисы-поиска-обменников)
 - [VPN](#vpn)
   - [VPN cервисы](#vpn-cервисы)
+  - [Другие инструменты обхода блокировок](#другие-инструменты-обхода-блокировок)
   - [Полезные ссылки](#полезные-ссылки-3)
 - [Список софта](#список-софта)
 
@@ -31,8 +33,8 @@
 
 Что запрещено, если Вы резидент:
 
-- :no_entry: Вывозить больше $10000 наличной валюты
-- :no_entry: Снимать с валютных счетов больше $10000 в долларах
+- :no_entry: Вывозить больше $10 000 наличной валюты
+- :no_entry: Снимать с валютных счетов больше $10 000 в долларах
 - :no_entry: Покупать валюту в кассах банка или обменниках
 - :no_entry: Перечислять другим людям за рубеж больше $5000 в месяц
 - :no_entry: Давать в долг в валюте иностранцам
@@ -147,7 +149,7 @@
 
 #### Брокеры, которые перестали работать с российскими резидентами
 
-- :no_entry_sign: Exante: 2022-03-09 ответили, что не работают с российскими резидентами
+- :no_entry_sign: Exante: 2022-03-09 ответили, что не работают с российскими резидентами.
 
 
 ### Российские брокеры
@@ -198,12 +200,35 @@
 
 ## Криптовалюты
 
-Сначала узнайте, [как хранить криптовалюту в условиях санкций](crypto.md), а потом пользуйтесь тем что ниже.
+Сначала узнайте, [как хранить криптовалюту в условиях санкций](sanctions-risks-in-cryptocurrency.md), а потом пользуйтесь тем что ниже.
+
+### Stablecoins
+
+| Token | Project/Company | Base Asset | Decentralized |  Algorithmic | Comments |
+| -- | -- | -- | -- | -- | -- |
+| `UST` | Terra | USD | + | + |  |
+| `sUSD` | Synthetix  | USD | + | + | |
+| `DAI` | MakerDAO | USD | + | - | [Review](https://forklog.com/chto-takoe-makerdao/) |
+| `USDT` | Tether | USD | - | - | [Review](https://vc.ru/finance/381435-udivitelnaya-istoriya-tether-usdt-lyudi-otnesli-80-milliardov-plasticheskomu-hirurgu-kotoryy-ne-garantiruet-ih-vozvrat) |
+| `USDC` | Circle | USD | - | - | |
+| `TUSD` | TrueUSD | USD | - | - | |
+| `BUSD` | Binance| USD | - | - | |
+
+References:
+
+1. [Алгоритмические стейблкоины: как развиваются альтернативы USDT и USDC](https://forklog.com/algoritmicheskie-stejblkoiny-kak-razvivayutsya-alternativy-usdt-i-usdc/), Forklog.
 
 ### Некастодиальные кошельки
 
 - Bitcoin Core ([сайт](https://bitcoin.org/); [PC](https://bitcoin.org/en/download)) - официальный клиент для сети Bitcoin. Гибкий, надежный, но по началу требует очень много места для первичной синхронизации.
 - Monero ([сайт](https://www.getmonero.org/); [PC](https://www.getmonero.org/downloads/#gui)) - официальный клиент, может работать без режима ноды.
+- Exodus
+- Trust Wallet (владелец Binance)
+- MetaMask (выполняет требования американских решуляторов).
+
+References:
+
+1. [Что такое кастодиальные и некастодиальные криптокошельки?](https://forklog.com/chto-takoe-kastodialnye-i-nekastodialnye-kriptokoshelki/), Forklog.
 
 ### Криптобиржи
 
@@ -220,56 +245,49 @@
 
 :warning: Использование сервисов-обменников сопряжено с повышенными рисками. Относитесь с особым вниманием к проверке репутации как обменника, так и выбранного продавца.
 
-- [BestChange](https://www.bestchange.ru/) - наверное, самый популярный сервис для поиска обменников - с отзывами, автоматически обновляющимся курсом и относительно большим выбором валют. В том числе содержит список бирж, которые поддерживают обмен за наличные. Также к каждому обменнику прилагается некоторая классификация: требует ли обменник верификацию (проверку карты/паспортных данных), как берут комиссию (и берут ли) и так далее.
-- [LocalBitcoins](https://localbitcoins.com/) - p2p-площадка для покупки BTC (Bitcoin) с поддержкой фиатных валют.
-- [LocalMonero](https://localmonero.co/) - p2p-площадка для покупки XMR (Monero) с поддержкой фиатных валют.
+- [BestChange](https://www.bestchange.ru/) - поиск обменников с отзывами, автоматически обновляющимся курсом и относительно большим выбором валют, к каждому обменнику прилагаются характериcтики: требует ли обменник верификацию (проверку карты/паспортных данных), как берут комиссию (и берут ли) и т.п.
+- [LocalBitcoins](https://localbitcoins.com/) - P2P-площадка для покупки BTC (Bitcoin) с поддержкой фиатных валют.
+- [LocalMonero](https://localmonero.co/) - P2P-площадка для покупки XMR (Monero) с поддержкой фиатных валют.
 
 ## VPN
 
 ### VPN cервисы
 
-Выбирайте VPN:
+Список надежных VPN сервисов (находятся за пределами российской юрисдикции):
 
-- находятся за пределами российской юрисдикции
-- устойчивые к глубокой проверке трафика
-- не ведут логов подключений
-- возможна оплата в Bitcoin.
+| Name | Has Free Plan | Support BTC payments | No-logs policy | OpenSource | Blocked/partally blocked in Russsia* | Comments |
+| -- | -- | -- | -- | -- | -- | -- |
+| Proton VPN | + | + | + | ? | - | |
+| IPVanish VPN | - | - | + | ? | + | |
+| Mullvad VPN | - | + | + | + | - | [Review](https://www.forbes.com/advisor/business/software/mullvad-vpn-review/) |
+| Nord VPN | - | ? | ? | ? | + | |
+| VyprVPN | ? | ? | ? | ? | + | |
+| Hola!VPN | ? | ? | ? | ? | + | |
+| ExpressVPN | ? | ? | ? | ? | + | |
+| KeepSolid VPN Unlimited | ? | ? | ? | ? | + | |
+| Speedify VPN | ? | ? | ? | ? | + | |
+| HighLoad VPN | +  | ? | ? | + | - | |
 
-Список надеждных VPN сервисов:
+\* [Заблокрированы РКН](https://habr.com/ru/news/t/576128/), но потенциально могут функционировать (частично или полностью).
 
-- NewNode VPN
-- VyprVPN*
-- OperaVPN
-- Hola!VPN*
-- ExpressVPN*
-- KeepSolid VPN Unlimited*
-- Nord VPN*
-- Speedify VPN*
-- IPVanish VPN*
-- Proton VPN
-- Mullvad VPN
+Продвинутые пользователи могут купить хостинг (VDS) и развернуть собственный VPN сервер:
 
-Тулы:
+- [Amnezia VPN](https://amnezia.org/) ([инструкция](https://habr.com/ru/company/amnezia/blog/546424/)) 
+- [Outline VPN](https://getoutline.org).
+
+### Другие инструменты обхода блокировок
 
 - Psiphon
 - Lantern
-
-\* [Заблокированы РКН](https://habr.com/ru/news/t/576128/), но потенциально могут частично функционировать.
-
-Продвинутые пользователи могут купить хостинг и установить [Amnezia VPN](https://amnezia.org/) или [Outline VPN](https://getoutline.org).
-
-https://habr.com/ru/company/amnezia/blog/546424/
-https://tjournal.ru/tech/541799-kak-podgotovitsya-k-vozmozhnomu-otklyucheniyu-interneta-prilozheniya-i-sovety-na-sluchay-blokirovok-svyazi
+- NewNode.
 
 ### Полезные ссылки
 
-Коммьюнити:
-
-- [Общество защиты интернета](https://t.me/safe_runet), Телеграм канал.
+1. [Общество защиты интернета](https://t.me/safe_runet), Телеграм канал.
 
 ## Список софта
 
 - Chrome или Brave
 - Tor Browser ([заблокирован РКН](https://blog.torproject.org/tor-censorship-in-russia/))
 - Защищенный мессенджер
-- VPN клиент.
+- [VPN клиент](lists.md#vpn).
