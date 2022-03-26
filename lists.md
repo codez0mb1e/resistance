@@ -204,15 +204,17 @@
 
 ### Stablecoins
 
-| Token | Project/Company | Base Asset | Decentralized |  Algorithmic | Comments |
-| -- | -- | -- | -- | -- | -- |
-| `UST` | Terra | USD | + | + |  |
-| `sUSD` | Synthetix  | USD | + | + | |
-| `DAI` | MakerDAO | USD | + | - | [Review](https://forklog.com/chto-takoe-makerdao/) |
-| `USDT` | Tether | USD | - | - | [Review](https://vc.ru/finance/381435-udivitelnaya-istoriya-tether-usdt-lyudi-otnesli-80-milliardov-plasticheskomu-hirurgu-kotoryy-ne-garantiruet-ih-vozvrat) |
-| `USDC` | Circle | USD | - | - | |
-| `TUSD` | TrueUSD | USD | - | - | |
-| `BUSD` | Binance| USD | - | - | |
+Стейблкоины и риски блокировки/потери средств:
+
+| Token | Project/Company | Base Asset | Decentralized |  Algorithmic | Comments | Risks |
+| -- | -- | -- | -- | -- | -- | -- |
+| `UST` | Terra | USD | + | + |  | Low |
+| `sUSD` | Synthetix  | USD | + | + | | Low |
+| `DAI` | MakerDAO | USD | + | - | [Review](https://forklog.com/chto-takoe-makerdao/) | **The lowest** | 
+| `USDT` | Tether | USD | - | - | [Review](https://vc.ru/finance/381435-udivitelnaya-istoriya-tether-usdt-lyudi-otnesli-80-milliardov-plasticheskomu-hirurgu-kotoryy-ne-garantiruet-ih-vozvrat)| Medium |
+| `USDC` | Circle | USD | - | - | | Medium |
+| `TUSD` | TrueUSD | USD | - | - | | Medium |
+| `BUSD` | Binance| USD | - | - | | Medium |
 
 References:
 
@@ -220,8 +222,8 @@ References:
 
 ### Некастодиальные кошельки
 
-- Bitcoin Core ([сайт](https://bitcoin.org/); [PC](https://bitcoin.org/en/download)) - официальный клиент для сети Bitcoin. Гибкий, надежный, но по началу требует очень много места для первичной синхронизации.
-- Monero ([сайт](https://www.getmonero.org/); [PC](https://www.getmonero.org/downloads/#gui)) - официальный клиент, может работать без режима ноды.
+- Bitcoin Core ([сайт](https://bitcoin.org/)) - официальный клиент для сети Bitcoin. Гибкий, надежный, но по началу требует очень много места для первичной синхронизации.
+- Monero ([сайт](https://www.getmonero.org/)) - официальный клиент, может работать без режима ноды.
 - Exodus
 - Trust Wallet (владелец Binance)
 - MetaMask (выполняет требования американских решуляторов).
@@ -257,9 +259,9 @@ References:
 
 | Name | Has Free Plan | Support BTC payments | No-logs policy | OpenSource | Blocked/partally blocked in Russsia* | Comments |
 | -- | -- | -- | -- | -- | -- | -- |
-| Proton VPN | + | + | + | ? | - | |
+| **Proton VPN** | + | + | + | ? | - | |
 | IPVanish VPN | - | - | + | ? | + | |
-| Mullvad VPN | - | + | + | + | - | [Review](https://www.forbes.com/advisor/business/software/mullvad-vpn-review/) |
+| **Mullvad VPN** | - | + | + | + | - | [Review](https://www.forbes.com/advisor/business/software/mullvad-vpn-review/) |
 | Nord VPN | - | ? | ? | ? | + | |
 | VyprVPN | ? | ? | ? | ? | + | |
 | Hola!VPN | ? | ? | ? | ? | + | |
