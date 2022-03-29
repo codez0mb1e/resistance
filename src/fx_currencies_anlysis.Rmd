@@ -203,16 +203,17 @@ jumper_symbols <- quotes_stats %>% filter(max_min_rate > 2) %>% pull(symbol)
 quotes_df %>% 
   filter(symbol %in% low_risk_symbols) %>% 
   mutate(
-    jumper = if_else(symbol %in% jumper_symbols, T, F)
+    jumper = if_else(symbol %in% jumper_symbols, "High risk currencies", "Low risk currencies")
   ) %>% 
   group_by(symbol) %>% 
   mutate(R = cumsum(return)) %>% 
   
   ggplot + 
     geom_line(aes(x = date, y = R, color = symbol)) +
-    
+
     facet_grid(jumper ~ ., scales = "free") +
     
+    labs(x = "", y = "Return of Investment", title = "Currencies Exchange Rates", subtitle = "Return of Investment for last 10 years") +
     theme_bw()
 ```
 
