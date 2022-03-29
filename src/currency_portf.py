@@ -53,7 +53,7 @@ currencies_ds = Dataset.get_by_name(ws, name='Currencies')
 currencies_ds.to_pandas_dataframe()
 
 print(f'Dataset name: {currencies_ds.name}. Description: {currencies_ds.description}.')
-print(f'Size of Azure ML dataset: {sys.getsizeof(currencies_ds)} bytes.')
+print(f'Size of Azure ML dataset object: {sys.getsizeof(currencies_ds)} bytes.')
 
 
 # %% Preprocessing ----
@@ -71,7 +71,7 @@ quotes_df = (currencies_ds
     .set_index('date')
     .sort_values(by='date'))
 
-quotes_df.head(10)
+quotes_df
 
 
 # %% Discover data ----
@@ -80,35 +80,35 @@ quotes_df.groupby('symbol')['close'].agg(['count', 'last'])
 
 # %% USD/RUB dataset ----
 usdrub_df = quotes_df[quotes_df.symbol == 'USD/RUB']
-
-pd.concat([
-    usdrub_df['close'].head(5),
-    usdrub_df['close'].tail(5)
-])
+usdrub_df
 
 
 # %% Calculate Return ----
-def get_returns(close_prices) -> pd.Series:
+def calc_returns(close_prices: pd.Series) -> pd.Series:
+    """Calculate Investment Return"""
     return (close_prices/close_prices.shift()) - 1
 
 
 usdrub_df['diff'] = usdrub_df['close'].diff()
-usdrub_df['return'] = get_returns(usdrub_df['close'])
+usdrub_df['return'] = calc_returns(usdrub_df['close'])
 
 usdrub_df[['close', 'diff', 'return']].tail(10)
 
 
 # %% Calculate LogReturn ----
-def get_log_returns(return_prices) -> pd.Series:
+def calc_log_returns(return_prices: pd.Series) -> pd.Series:
+    """Calculate Log Return"""
     return np.log(1 + return_prices)
 
-usdrub_df['log_return'] = usdrub_df['return'].apply(lambda x: get_log_returns(x))
+usdrub_df['log_return'] = usdrub_df['return'].apply(lambda x: calc_log_returns(x))
 usdrub_df[['close', 'diff', 'return', 'log_return']].tail(10)
 
 
 # %% Simulate possible LogReturns ----
 
-def get_simulated_returns(log_returns: pd.Series, n_days: int, n_iterations: int) -> pd.Series:
+def calc_simulated_returns(log_returns: pd.Series, n_days: int, n_iterations: int) -> pd.Series:
+    """Calculate Simulated Return"""
+
     u = log_returns.mean()
     var = log_returns.var()
     stdev = log_returns.std()
@@ -119,7 +119,7 @@ def get_simulated_returns(log_returns: pd.Series, n_days: int, n_iterations: int
     return np.exp(drift + stdev*Z)
 
 
-usdrub_simulated_returns = get_simulated_returns(
+usdrub_simulated_returns = calc_simulated_returns(
     usdrub_df['log_return'].dropna(),
     n_days,
     n_simulations)
@@ -140,9 +140,9 @@ def get_breakeven_prob(pred, risk_free_rate: float = 0.02) -> pd.Series:
     """
 
     init_pred = pred.iloc[0, 0]
-    pred = pred.iloc[-1]
 
-    pred_list = list(pred)
+    last_pred = pred.iloc[-1]
+    pred_list = list(last_pred)
 
     over = [(p*100)/init_pred for p in pred_list if ((p-init_pred)*100)/init_pred >= risk_free_rate]
     less = [(p*100)/init_pred for p in pred_list if ((p-init_pred)*100)/init_pred < risk_free_rate]
@@ -150,7 +150,7 @@ def get_breakeven_prob(pred, risk_free_rate: float = 0.02) -> pd.Series:
     return len(over)/(len(over) + len(less))
 
 
-def evaluate_simulation(simulated_returns: pd.Series, last_actual_price: float, n_days: int, plot = True) -> pd.DataFrame:
+def evaluate_simulation(simulated_returns: pd.Series, last_actual_price: float, n_days: int, plot: bool = True) -> pd.DataFrame:
     """
     Evaluate Monte-Carlo simulations result
     """
@@ -211,9 +211,9 @@ quotes_data = [quotes_df.query('symbol == @s') for s in quotes_df.symbol.unique(
 symbols_list = [df.symbol.unique() for df in quotes_data]
 
 # 2. simulate
-returns_data = [get_returns(df['close']) for df in quotes_data]
-log_returns_data = [get_log_returns(r) for r in returns_data]
-simulated_returns_data = [get_simulated_returns(lr, n_days, n_simulations) for lr in log_returns_data]
+returns_data = [calc_returns(df['close']) for df in quotes_data]
+log_returns_data = [calc_log_returns(r) for r in returns_data]
+simulated_returns_data = [calc_simulated_returns(lr, n_days, n_simulations) for lr in log_returns_data]
 
 assert(
     len(quotes_data) > 0
