@@ -111,7 +111,9 @@ quotes_df %<>%
   na.omit
 ```
 
-Base and quote currencies:
+## Discover Data
+
+Calculate statistics and `volatility`:
 
 ```{r discover}
 quotes_stats <- quotes_df %>% 
@@ -124,14 +126,7 @@ quotes_stats <- quotes_df %>%
     volatility = sd(log_return)
   )
 
-volatility_threshold <- quotes_stats %>% pull(volatility) %>% quantile(probs = .75)
-
-
 quotes_stats %>% 
-  filter(
-    volatility <= volatility_threshold | 
-    symbol == "USD/RUB"
-  ) %>% 
   mutate(
     `100x Volatility` = volatility*100
   ) %>% 
@@ -140,14 +135,14 @@ quotes_stats %>%
   
   gt() %>% 
   tab_header(
-    title = "The Least Volatile Currencies",
+    title = "The Least and The Most Volatile Currencies",
     subtitle = glue("{min(quotes_df$date)} to {max(quotes_df$date)}")
   ) %>%
   fmt_number(
-    columns = c(max_price, min_price, max_min_rate, `100x Volatility`)
+    columns = c(max_price, min_price, max_min_rate, last_price, `100x Volatility`)
   )
 ```
-My broker available pairs:
+My broker trades the following pairs:
 
 ```{r}
 symbols  <- c(
@@ -156,9 +151,12 @@ symbols  <- c(
   'AED', 'KZT', 'BYN', 'TRY', 'MXN'
 )
 
+symbols <- str_c("USD", symbols, sep = "/")
+
+
 quotes_stats %>% 
   filter(
-    symbol %in% str_c("USD", symbols, sep = "/")
+    symbol %in% symbols
   ) %>% 
   mutate(
     `100x Volatility` = volatility*100
@@ -172,26 +170,21 @@ quotes_stats %>%
     subtitle = glue("{min(quotes_df$date)} to {max(quotes_df$date)}")
   ) %>%
   fmt_number(
-    columns = c(max_price, min_price, max_min_rate, `100x Volatility`)
+    columns = c(max_price, min_price, last_price, max_min_rate, `100x Volatility`)
   )
 
 ```
 Plot exchange rate for out favorites:
 
-```{r}
-
-```
-
 Define low risk symbols:
 
 ```{r}
+usdrub_vol <- quotes_stats %>% filter(symbol == "USD/RUB") %>% pull(volatility)
+
 low_risk_symbols <- quotes_stats %>% 
   filter(
-    symbol %in% str_c("USD", symbols, sep = "/")
-  ) %>% 
-  filter(
-    volatility <= volatility_threshold | 
-    symbol == "USD/RUB"
+    symbol %in% symbols &
+    volatility <= usdrub_vol
   ) %>% 
   pull(symbol) %>% 
   unique
@@ -202,6 +195,28 @@ cat(
     paste(low_risk_symbols, collapse = "', '")
 ))
 ```
+
+
+```{r}
+jumper_symbols <- quotes_stats %>% filter(max_min_rate > 2) %>% pull(symbol)
+
+quotes_df %>% 
+  filter(symbol %in% low_risk_symbols) %>% 
+  mutate(
+    jumper = if_else(symbol %in% jumper_symbols, T, F)
+  ) %>% 
+  group_by(symbol) %>% 
+  mutate(R = cumsum(return)) %>% 
+  
+  ggplot + 
+    geom_line(aes(x = date, y = R, color = symbol)) +
+    
+    facet_grid(jumper ~ ., scales = "free") +
+    
+    theme_bw()
+```
+
+
 
 
 
