@@ -204,7 +204,7 @@ plt.show()
 
 # %% Monte Carlo simulation pipeline for multiple tokens ----
 # 0. set simulation params
-n_simulations = int(1e4)
+n_simulations = int(1e5)
 
 # 1. prepare
 quotes_data = [quotes_df.query('symbol == @s') for s in quotes_df.symbol.unique()]
@@ -224,11 +224,10 @@ assert(
 for i in range(len(symbols_list)):
     print(f'---- Starting Monte-Carlo simulation for {symbols_list[i]} symbol ----')
 
-    
     prices_ms = evaluate_simulation(simulated_returns_data[i], quotes_data[i]['close'].tail(1), n_days, plot=False)
-    
+
     plt.figure(figsize=(10, 6))
-    plt.plot(prices_ms.sample(100, axis='columns'))
+    plt.plot(prices_ms.sample(50, axis='columns'))
     plt.title(f'{symbols_list[i]} Price Simulation')
     plt.xlabel('Days')
     plt.ylabel('Amount per $1')
