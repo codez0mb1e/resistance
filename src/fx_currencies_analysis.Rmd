@@ -1,13 +1,19 @@
 ---
 title: "Currencies Analysis"
-output: github_document
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  github_document:
+    toc: false
+    toc_depth: 2
+    fig_width: 9
+    fig_height: 9 
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = T, warning = F)
 ```
 
-***Analysis price of the my list of ~~the most promised cryptotokens~~ currencies.***
+***Analysis price of the my list of currencies.***
 
 ## Prepare
 
@@ -16,6 +22,9 @@ Install packages and set environment :earth_asia:
 `install.packages("azuremlsdk")`
 
 ```{r set_envinroment, message=FALSE}
+options(max.print = 1e3, scipen = 999, width = 1e2)
+options(stringsAsFactors = F)
+
 suppressPackageStartupMessages({
   library(dplyr)
   library(tidyr)
@@ -51,12 +60,19 @@ sprintf(
 
 ## Load dataset
 
+WARNING: I used `currency exchange rates` data from [Kaggle Dataset](https://www.kaggle.com/datasets/dhruvildave/currency-exchange-rates):
+
 ```{r get_azure_dataset}
 currencies_ds <- azuremlsdk::get_dataset_by_name(ws, name = .azureml_dataset_name)
-currencies_ds$name
-currencies_ds$description
+
+sprintf(
+  "Dataset name: %s. %s",
+  currencies_ds$name, 
+  currencies_ds$description
+)
 ```
-Get USD/RUB top higher rates:
+
+Get `USD/RUB` top higher rates:
 
 ```{r prepare_dataframe}
 quotes_df <- currencies_ds$to_pandas_dataframe()
@@ -210,11 +226,20 @@ quotes_df %>%
   
   ggplot + 
     geom_line(aes(x = date, y = R, color = symbol)) +
+    scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
 
     facet_grid(jumper ~ ., scales = "free") +
     
-    labs(x = "", y = "Return of Investment", title = "Currencies Exchange Rates", subtitle = "Return of Investment for last 10 years") +
-    theme_bw()
+    labs(
+      title = "Currencies Exchange Rates", subtitle = "Return of Investment for last 10 years",
+      x = "", y = "Return of Investment", 
+      caption = currencies_ds$description) +
+    theme_minimal() +
+  
+    theme(
+      legend.position = "top", legend.title = element_blank(),
+      plot.caption = element_text(size = 8)
+    )
 ```
 
 
