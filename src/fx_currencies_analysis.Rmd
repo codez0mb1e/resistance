@@ -1,0 +1,248 @@
+---
+title: "Currencies Analysis"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  github_document:
+    toc: false
+    toc_depth: 2
+    fig_width: 9
+    fig_height: 9 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, warning = F)
+```
+
+***Analysis price of the my list of currencies.***
+
+## Prepare
+
+Install packages and set environment :earth_asia:
+
+`install.packages("azuremlsdk")`
+
+```{r set_envinroment, message=FALSE}
+options(max.print = 1e3, scipen = 999, width = 1e2)
+options(stringsAsFactors = F)
+
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(tidyr)
+  
+  library(lubridate)
+  library(stringr)
+  
+  library(gt)
+  library(tidyverse)
+  library(glue)
+  
+  library(ggplot2)
+  
+  library(azuremlsdk)
+})
+```
+
+
+```{r set_params}
+.azureml_dataset_name <- "Currencies"
+```
+
+
+Connect to Azure ML workspace:
+
+```{r azureml_connect}
+ws <- azuremlsdk::load_workspace_from_config()
+sprintf(
+  "%s workspace located in %s region", ws$name, ws$location
+)
+```
+
+
+## Load dataset
+
+WARNING: I used `currency exchange rates` data from [Kaggle Dataset](https://www.kaggle.com/datasets/dhruvildave/currency-exchange-rates):
+
+```{r get_azure_dataset}
+currencies_ds <- azuremlsdk::get_dataset_by_name(ws, name = .azureml_dataset_name)
+
+sprintf(
+  "Dataset name: %s. %s",
+  currencies_ds$name, 
+  currencies_ds$description
+)
+```
+
+Get `USD/RUB` top higher rates:
+
+```{r prepare_dataframe}
+quotes_df <- currencies_ds$to_pandas_dataframe()
+
+# ~ 20 years, 150 currencies and 1.5M rows
+
+quotes_df %>%
+  filter(slug == "USD/RUB") %>%
+  select(-slug) %>% 
+  top_n(10) %>% 
+  
+  gt() %>%
+  tab_header(
+    title = "USD/RUB Rate",
+    subtitle = glue("{min(quotes_df$date)} to {max(quotes_df$date)}")
+  ) %>%
+  fmt_date(
+    columns = date,
+    date_style = 6
+  ) %>%
+  fmt_number(
+    columns = c(open, high, low, close)
+  )
+```
+
+## Preprocessing data
+
+Calculate `Return` and `Log Return` for last 10 years: 
+
+```{r preprocessing}
+quotes_df %<>% 
+  transmute(
+    symbol = slug,
+    price = close,
+    date
+  ) %>% 
+  
+  filter(
+    str_detect(symbol, "USD/") &
+    date > max(date) - lubridate::years(10)
+  ) %>% 
+  
+  filter(!(symbol == "USD/RUB" & price < 1)) %>% 
+  
+  arrange(date) %>% 
+  group_by(symbol) %>%
+  
+  mutate(
+    return = c(NA_real_, diff(price))/lag(price),
+    log_return = log(1 + return)
+  ) %>% 
+  na.omit
+```
+
+## Discover Data
+
+Calculate statistics and `volatility`:
+
+```{r discover}
+quotes_stats <- quotes_df %>% 
+
+  summarise(
+    max_price = max(price), 
+    min_price = min(price),
+    last_price = last(price),
+    max_min_rate = max(price)/min(price),
+    volatility = sd(log_return)
+  )
+
+quotes_stats %>% 
+  mutate(
+    `100x Volatility` = volatility*100
+  ) %>% 
+  arrange(volatility) %>% 
+  select(-volatility) %>% 
+  
+  gt() %>% 
+  tab_header(
+    title = "The Least and The Most Volatile Currencies",
+    subtitle = glue("{min(quotes_df$date)} to {max(quotes_df$date)}")
+  ) %>%
+  fmt_number(
+    columns = c(max_price, min_price, max_min_rate, last_price, `100x Volatility`)
+  )
+```
+My broker trades the following pairs:
+
+```{r}
+symbols  <- c(
+  'RUB', 
+  'EUR', 'GBP', 'CHF', 'CNY', 'HKD', 'JPY', 'SEK', 'SGD', 'AUD',  
+  'AED', 'KZT', 'BYN', 'TRY', 'MXN'
+)
+
+symbols <- str_c("USD", symbols, sep = "/")
+
+
+quotes_stats %>% 
+  filter(
+    symbol %in% symbols
+  ) %>% 
+  mutate(
+    `100x Volatility` = volatility*100
+  ) %>% 
+  arrange(volatility) %>% 
+  select(-volatility) %>% 
+  
+  gt() %>% 
+  tab_header(
+    title = "The Most Promised Currencies",
+    subtitle = glue("{min(quotes_df$date)} to {max(quotes_df$date)}")
+  ) %>%
+  fmt_number(
+    columns = c(max_price, min_price, last_price, max_min_rate, `100x Volatility`)
+  )
+
+```
+Plot exchange rate for out favorites:
+
+Define low risk symbols:
+
+```{r}
+usdrub_vol <- quotes_stats %>% filter(symbol == "USD/RUB") %>% pull(volatility)
+
+low_risk_symbols <- quotes_stats %>% 
+  filter(
+    symbol %in% symbols &
+    volatility <= usdrub_vol
+  ) %>% 
+  pull(symbol) %>% 
+  unique
+
+cat(
+  sprintf(
+    "['%s']",
+    paste(low_risk_symbols, collapse = "', '")
+))
+```
+
+
+```{r}
+jumper_symbols <- quotes_stats %>% filter(max_min_rate > 2) %>% pull(symbol)
+
+quotes_df %>% 
+  filter(symbol %in% low_risk_symbols) %>% 
+  mutate(
+    jumper = if_else(symbol %in% jumper_symbols, "High risk currencies", "Low risk currencies")
+  ) %>% 
+  group_by(symbol) %>% 
+  mutate(R = cumsum(return)) %>% 
+  
+  ggplot + 
+    geom_line(aes(x = date, y = R, color = symbol)) +
+    scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+
+    facet_grid(jumper ~ ., scales = "free") +
+    
+    labs(
+      title = "Currencies Exchange Rates", subtitle = "Return of Investment for last 10 years",
+      x = "", y = "Return of Investment", 
+      caption = currencies_ds$description) +
+    theme_minimal() +
+  
+    theme(
+      legend.position = "top", legend.title = element_blank(),
+      plot.caption = element_text(size = 8)
+    )
+```
+
+
+
+
+
