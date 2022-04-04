@@ -3,13 +3,14 @@
 """Currency Portfolio: Assets Selection.
 
 Description:
-    Currency Selection in anti-crisis portfolio using monte Carlo simulation.
+    Currency Selection in anti-crisis portfolio using Monte Carlo simulation.
 """
 
 # %% Import dependencies ----
 # core
 import sys
 import warnings
+import gc
 from IPython import sys_info
 
 # data science
@@ -30,10 +31,14 @@ warnings.filterwarnings("ignore")
 
 
 # %% Set params ----
-symbols = ['USD/CHF', 'USD/CNY', 'USD/EUR', 'USD/GBP', 'USD/HKD', 'USD/JPY', 'USD/KZT', 'USD/RUB']
-
 n_days = int(252)  # US market has 252 trading days in a year
-n_simulations = int(1e4)
+n_simulations = int(1e4)  # number of Monte-Carlo simulations
+
+# The most promised currencies (copy this list from fx_currencies_analysis.Rmd)
+symbols = [
+    'USD/AED', 'USD/AUD', 'USD/CHF', 'USD/CNY', 'USD/EUR', 'USD/GBP', 
+    'USD/HKD', 'USD/JPY', 'USD/KZT', 'USD/MXN', 'USD/RUB', 'USD/SEK', 'USD/SGD'
+]
 
 
 # %% Connect to Azure ML workspace ----
@@ -57,7 +62,6 @@ print(f'Size of Azure ML dataset object: {sys.getsizeof(currencies_ds)} bytes.')
 
 
 # %% Preprocessing ----
-
 quotes_df = (currencies_ds
     # materialize
     .to_pandas_dataframe()
@@ -76,7 +80,7 @@ quotes_df
 
 # %% Discover data ----
 quotes_df.groupby('symbol')['close'].agg(['count', 'last'])
-  
+
 
 # %% USD/RUB dataset ----
 usdrub_df = quotes_df[quotes_df.symbol == 'USD/RUB']
@@ -101,6 +105,7 @@ def calc_log_returns(return_prices: pd.Series) -> pd.Series:
     return np.log(1 + return_prices)
 
 usdrub_df['log_return'] = usdrub_df['return'].apply(lambda x: calc_log_returns(x))
+
 usdrub_df[['close', 'diff', 'return', 'log_return']].tail(10)
 
 
@@ -172,7 +177,7 @@ def evaluate_simulation(simulated_returns: pd.Series, last_actual_price: float, 
         x = price_df.iloc[-1]
         fig, ax = plt.subplots(1, 2, figsize=(14, 4))
         sns.distplot(x, ax=ax[0])
-        sns.distplot(x, hist_kws={'cumulative': True}, kde_kws={'cumulative': True}, ax=ax[1])
+        sns.distplot(x, hist_kws={'cumulative': True}, kde_kws={'cumulative':True}, ax=ax[1])
         plt.xlabel('Stock Price')
         plt.show()
 
@@ -189,8 +194,8 @@ def evaluate_simulation(simulated_returns: pd.Series, last_actual_price: float, 
 
 usdrub_mc_simulation_df = evaluate_simulation(
     usdrub_simulated_returns,
-    last_actual_price = usdrub_df['close'].tail(1),
-    n_days = n_days)
+    last_actual_price=usdrub_df['close'].tail(1),
+    n_days=n_days)
 
 
 plt.figure(figsize=(10, 6))
@@ -203,8 +208,6 @@ plt.show()
 
 
 # %% Monte Carlo simulation pipeline for multiple tokens ----
-# 0. set simulation params
-n_simulations = int(1e5)
 
 # 1. prepare
 quotes_data = [quotes_df.query('symbol == @s') for s in quotes_df.symbol.unique()]
@@ -235,4 +238,5 @@ for i in range(len(symbols_list)):
 
 
 # %% Completed ----
-gc()
+gc.collect()
+
