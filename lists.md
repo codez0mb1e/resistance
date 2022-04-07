@@ -257,18 +257,14 @@ References:
 
 Список надежных VPN сервисов (находятся за пределами российской юрисдикции):
 
-| Name | Has Free Plan | Support BTC payments | No-logs policy | OpenSource | Blocked/partally blocked in Russsia* | Comments |
-| -- | -- | -- | -- | -- | -- | -- |
-| **Proton VPN** | + | + | + | ? | - | |
-| IPVanish VPN | - | - | + | ? | + | |
-| **Mullvad VPN** | - | + | + | + | - | [Review](https://www.forbes.com/advisor/business/software/mullvad-vpn-review/) |
-| Nord VPN | - | ? | ? | ? | + | |
-| VyprVPN | ? | ? | ? | ? | + | |
-| Hola!VPN | ? | ? | ? | ? | + | |
-| ExpressVPN | ? | ? | ? | ? | + | |
-| KeepSolid VPN Unlimited | ? | ? | ? | ? | + | |
-| Speedify VPN | ? | ? | ? | ? | + | |
-| HighLoad VPN | +  | ? | ? | + | - | |
+| Name | Has Free Plan | Support BTC payments | No-logs policy | OpenSource | Blocked/partally blocked in Russsia* | Trust level | Comments |
+| -- | -- | -- | -- | -- | -- | -- |-- |
+| **[Proton VPN](https://protonvpn.com/)** | + | + | + | [+](https://github.com/orgs/ProtonVPN/repositories) | - | Very high | |
+| [IPVanish VPN](https://www.ipvanish.com/) | - | - | + | [-](https://github.com/ipvanish) | + | High | |
+| **[Mullvad VPN](https://mullvad.net/en/)** | - | + | [+](https://github.com/mullvad) | + | - | High | [Review](https://www.forbes.com/advisor/business/software/mullvad-vpn-review/) | |
+| [Nord VPN](https://nordvpn.com/) | - | + | + | [-](https://github.com/NordSecurity) | + | High |  |
+| [ExpressVPN](https://www.expressvpn.com/) | - | + | + | [-](https://github.com/expressvpn) | + | Medium | |
+| [HighLoad VPN](https://hi-l.eu/start) | Fully free | | [+](https://hi-l.eu/privacy-policy) | [Partially](https://github.com/Jigsaw-Code/outline-server) | - | Medium | Based on ShadowSocks |
 
 \* [Заблокрированы РКН](https://habr.com/ru/news/t/576128/), но потенциально могут функционировать (частично или полностью).
 
