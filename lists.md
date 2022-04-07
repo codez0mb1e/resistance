@@ -206,15 +206,16 @@
 
 Стейблкоины и риски блокировки/потери средств:
 
-| Token | Project/Company | Base Asset | Decentralized |  Algorithmic | Comments | Risks |
-| -- | -- | -- | -- | -- | -- | -- |
-| `UST` | Terra | USD | + | + | Риски хаков высоки | **The lowest** |
-| `sUSD` | Synthetix  | USD | + | + | Риски хаков высоки | Low |
-| `DAI` | MakerDAO | USD | + | - | [Review](https://forklog.com/chto-takoe-makerdao/) | **The lowest** | 
-| `USDT` | Tether | USD | - | - | [Review](https://vc.ru/finance/381435-udivitelnaya-istoriya-tether-usdt-lyudi-otnesli-80-milliardov-plasticheskomu-hirurgu-kotoryy-ne-garantiruet-ih-vozvrat)| The highest |
-| `USDC` | Circle | USD | - | - | | The highest |
-| `TUSD` | TrueUSD | USD | - | - | | Medium |
-| `BUSD` | Binance| USD | - | - | | Medium |
+| Token | Project/Company | Target Price | Collateralization | Transparency/Audit | Decentralized | Type | Reviews | Hacks Risks | Defaults Risks | Sanctions Risks |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| `UST` | Terra | $1 | LUNA, BTC | Medium | **+** | Algorithmic |  | Medium | The highest | **The lowest** |
+| `sUSD` | Synthetix  | $1 | ? | ? | **+** | Algorithmic | ? | ? | ? | ? |
+| **`DAI`** | MakerDAO | $1 | [USDC, ETH, WBTC](DaiStats.com) | High | + | Smart contract | [1](https://forklog.com/chto-takoe-makerdao/), [2](https://vc.ru/finance/387874-kak-natyanut-sovu-na-globus-razbiraem-kak-decentralizovannyy-steyblkoin-dai-mozhet-zashchitit-vashi-dengi) | Medium | Low | **The lowest** |
+| `USDT` | Tether | $1 | [US Treasury, Bonds, Cash](https://assets.ctfassets.net/vyse88cgwfbl/4hiNJsZ98LlZqCJHKzrLpV/2b6338482ef0093382885f80ba6f1083/Tether_Assurance-12-31-21.pdf) | Poor | - | Classic (fiat based) | [1](https://vc.ru/finance/381435-udivitelnaya-istoriya-tether-usdt-lyudi-otnesli-80-milliardov-plasticheskomu-hirurgu-kotoryy-ne-garantiruet-ih-vozvrat)| Low | Medium | The highest |
+| `USDC` | Circle | $1 | [100% Cash](https://www.centre.io/hubfs/PDF/2022%20Circle%20Examination%20Report%20February%202022.pdf?hsLang=en) | [Medium](https://www.centre.io/usdc-transparency?hsLang=en) | - | Classic (fiat based) | | Low | Low | Medium |
+| `BUSD` | Binance (via Paxos)| $1 | [Cash, US Treasury](https://paxos.com/busd/) | [Medium](https://paxos.com/attestations/) | - | Classic (fiat based) | | Low | Low | Low |
+| `USDP` | Paxos | $1 | | [Medium](https://paxos.com/attestations/) | - | Classic (fiat based) |  | Low | Low | Medium |
+| `PAXG` | [Paxos](https://paxos.com/paxgold/) | 1 oz Gold | | [Medium](https://paxos.com/attestations/) | - | Classic (fiat based)  | | Low | Low | Medium |
 
 References:
 
@@ -261,7 +262,7 @@ References:
 | -- | -- | -- | -- | -- | -- | -- |-- |
 | **[Proton VPN](https://protonvpn.com/)** | + | + | + | [+](https://github.com/orgs/ProtonVPN/repositories) | - | Very high | |
 | [IPVanish VPN](https://www.ipvanish.com/) | - | - | + | [-](https://github.com/ipvanish) | + | High | |
-| **[Mullvad VPN](https://mullvad.net/en/)** | - | + | [+](https://github.com/mullvad) | + | - | High | [Review](https://www.forbes.com/advisor/business/software/mullvad-vpn-review/) | |
+| **[Mullvad VPN](https://mullvad.net/en/)** | - | + | + | [+](https://github.com/mullvad) | - | High | [Review](https://www.forbes.com/advisor/business/software/mullvad-vpn-review/) | |
 | [Nord VPN](https://nordvpn.com/) | - | + | + | [-](https://github.com/NordSecurity) | + | High |  |
 | [ExpressVPN](https://www.expressvpn.com/) | - | + | + | [-](https://github.com/expressvpn) | + | Medium | |
 | [HighLoad VPN](https://hi-l.eu/start) | Fully free | | [+](https://hi-l.eu/privacy-policy) | [Partially](https://github.com/Jigsaw-Code/outline-server) | - | Medium | Based on ShadowSocks |
