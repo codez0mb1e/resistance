@@ -223,15 +223,18 @@ References:
 
 ### Некастодиальные кошельки
 
-- Bitcoin Core ([сайт](https://bitcoin.org/)) - официальный клиент для сети Bitcoin. Гибкий, надежный, но по началу требует очень много места для первичной синхронизации.
-- Monero ([сайт](https://www.getmonero.org/)) - официальный клиент, может работать без режима ноды.
-- Exodus
-- Trust Wallet (владелец Binance)
-- MetaMask (выполняет требования американских решуляторов).
+| | Wallet name | Type | Private key/seed phrase storage | Supported tokens | Platforms | Reviews | Hacks Risks | Defaults Risks | Sanctions Risks |
+|--|--|--|--|--|--|--|--|--|--|
+| :o: | [Trustee](https://trusteeglobal.com/) |  | Local | | | | | | Low |
+| :o: | [Metamask](https://metamask.io/) | Multi-wallet | Local | [EVM](https://ethereum.org/en/developers/docs/evm/)-compatible tokens, e.g. ETH | Chome extension, Android, iOs | | | | Medium |
+| :white_check_mark: | Atomic | Multi-wallet |Local | | | | | | Low |
+| :white_check_mark: | Exodus | Multi-wallet | Local | | | | | | Low |
+| :white_check_mark: | Trust Wallet | Multi-wallet | Local | | | Binance as owner | | | Low |
+| :white_check_mark: | Coinomi | Multi-wallet | Local | | | | | |  ? |
+| :white_check_mark: | [Samorai Wallet](https://samouraiwallet.com/) | Bitcoin wallet | Local | BTC | Android | Toxic | | | The lowest |
+| :white_check_mark: | [Mycelium](https://wallet.mycelium.com/) | Bitcoin wallet | Local | BTC | Anroid | | | BTC | Low |
+| :no_entry: | [Electrum](https://electrum.org/) | Bitcoin wallet | Local | BTC | Win, Linux, OSX, Android | | | BTC | Medium |
 
-References:
-
-1. [Что такое кастодиальные и некастодиальные криптокошельки?](https://forklog.com/chto-takoe-kastodialnye-i-nekastodialnye-kriptokoshelki/), Forklog.
 
 ### Криптобиржи
 
