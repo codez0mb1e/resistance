@@ -223,15 +223,20 @@ References:
 
 ### Некастодиальные кошельки
 
-- Bitcoin Core ([сайт](https://bitcoin.org/)) - официальный клиент для сети Bitcoin. Гибкий, надежный, но по началу требует очень много места для первичной синхронизации.
-- Monero ([сайт](https://www.getmonero.org/)) - официальный клиент, может работать без режима ноды.
-- Exodus
-- Trust Wallet (владелец Binance)
-- MetaMask (выполняет требования американских решуляторов).
-
-References:
-
-1. [Что такое кастодиальные и некастодиальные криптокошельки?](https://forklog.com/chto-takoe-kastodialnye-i-nekastodialnye-kriptokoshelki/), Forklog.
+| | Wallet name | Type | Private key/seed phrase storage | Supported tokens | Platforms | Comments | Hacks Risks | Sanctions Risks |
+|--|--|--|--|--|--|--|--|--|
+| :white_check_mark: | [**Atomic**](https://atomicwallet.io/) | Multi-wallet | Local | BTC, ETH, and 100+ tokens| Win, MacOS, Linux-based, Android, iOS | (+) Staking ready | Low | Low |
+| :white_check_mark: | [**Exodus**](https://www.exodus.com/download/) | Multi-wallet | Local | BTC, ETH, and 100+ tokens | Win, MacOS, Linux-based, Android, iOS | (+) Staking ready | Low | Low |
+| :white_check_mark: | [Trust Wallet](https://trustwallet.com/ru/) | Multi-wallet | Local | BTC, ETH, +1K tokens | Low | (-) Binance is owner, (+) Stacking ready | | [Medium](https://www.binance.com/en/blog/leadership/ukraine-russia-sanctions-and-crypto-421499824684903532) |
+| :white_check_mark: | [Coinomi](https://www.coinomi.com/) | Multi-wallet | Local | BTC, ETH, and 100+ tokens | Win, MacOS, Linux-based, Android, iOS | | Low | Low |
+| :white_check_mark: | [Samorai Wallet](https://samouraiwallet.com/) | Bitcoin wallet | Local | BTC | Android | (-) Mixer reputation | Low | The lowest |
+| :white_check_mark: | [Mycelium](https://wallet.mycelium.com/) | Bitcoin wallet | Local | BTC | Android | | | Low |
+| :white_check_mark: | [Trustee](https://trusteeglobal.com/) |  Multi-wallet | Local | BTC, ETH, and 20+ tokens |  iOS, Android | | Low | Low |
+| :o: | [Metamask](https://metamask.io/) | Multi-wallet | Local | [EVM](https://ethereum.org/en/developers/docs/evm/)-compatible tokens, e.g. ETH | Chome extension, Android, iOS | | Low | [Medium](https://metamask.zendesk.com/hc/en-us/articles/360059386712-Why-MetaMask-and-Infura-cannot-serve-certain-areas) |
+| :o: | [Wasabi Wallet](https://wasabiwallet.io/) | Private bitcoin wallet | Local | BTC | Win, MacOS, Linux-based | (-) Mixer reputation, (+) Open-source, privacy-focused | Low | The lowest |
+| :o: | [Electrum](https://electrum.org/) | Bitcoin wallet | Local | BTC | Win, Linux, OSX, Android | | [Medium](https://xakep.ru/2020/10/13/electrum-attaks/) | Low |
+| :no_entry: | [Coinbase](https://www.coinbase.com/wallet) | Multi-wallet | Local | BTC, ETH, and others [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) compatible tokens | Chome extension, Android, iOS | (-) KYC, (+) NFT | Very low | [The highest](https://twitter.com/brian_armstrong/status/1499621509651787782?s=20&t=zGROkm-WKH5Ja6f6LR7BwA) |
+| :no_entry: | [Blockchain.com](https://www.blockchain.com/wallet) | Multi-wallet | Remote | BTC, ETH, and 10+ others | Web UI | | Low | High |
 
 ### Криптобиржи
 
