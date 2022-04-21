@@ -229,12 +229,17 @@
 
 Прецеденты:
 
+- :warning: Биржа Binance:
+  - невозможно ввести/вывести деньги на карту с российских банков
+  - P2P переводы для [неподсанкционных бакнков](lists.md#банки-под-санкциями) доступны
+  - [блокируют пользователей только из санкционных списков OFAC](https://www.binance.com/en/blog/leadership/ukraine-russia-sanctions-and-crypto-421499824684903532), но не всех подряд с резиденством РФ
+  - 2022-04-21 вступили в силу ограничения для резидентов РФ, чья сумма баланса в совокупности превышает €10 000: [доступен будет только вывод средства, торговля и депозиты будут заблокированы](https://www.binance.com/en/support/announcement/4887e569afdf4b1e89e024371d3a49b9).
 - :warning: Американская биржа Coinbase [объявила о блокировке более 25 тыс. кошельков](https://twitter.com/brian_armstrong/status/1499621509651787782?s=20&t=zGROkm-WKH5Ja6f6LR7BwA), связанных с российскими гражданами и компаниями из американских санкционных списков OFAC [4]
 - :warning: Американская биржа Kraken, несмотря на [просьбы со стороны украинских властей, **отказалась** блокировать российские аккаунты](https://twitter.com/jespow/status/1498112741684363265?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1498112741684363265%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fcryptocurrency.tech%2Famerikanskaya-kriptobirzha-kraken-my-zablokiruem-scheta-rossiyan-v-sluchae-polucheniya-yuridicheskogo-trebovaniya%2F) без юридических оснований на это.
 - :no_entry: Биржа [Kuna](https://t.me/michaelchobanian/1439), [BTC Alpha](https://btc-alpha.com/en/news/important-message-for-btc-alpha-users-from-all-the), [Qmall](https://twitter.com/QmallExchange/status/1497957646531444738?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1497957646531444738%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fforklog.com%2Fplatformy-kuna-whitebit-i-cex-io-vveli-ogranicheniya-dlya-rossijskih-polzovatelej%2F) заблокировали счета жителей России, а также заморозили их активы на своей платформе.
-- :warning: Биржа Binance [обещали](https://www.binance.com/en/blog/leadership/ukraine-russia-sanctions-and-crypto-421499824684903532) и делают только блокировку пользователей из санкционных списков OFAC (вне зависимости от страны резидентства). 
+ 
 - :warning: Представители биржи EXMO пообещали не блокировать доступ для всех российских пользователей, а только для лиц из санкционных списков.
--  :no_entry: Крупнейшие южнокорейские криптовалютные биржи Upbit, Bithumb и Korbit закрыли доступ к своим торговым платформам для россиян.
+- :no_entry: Крупнейшие южнокорейские криптовалютные биржи Upbit, Bithumb и Korbit закрыли доступ к своим торговым платформам для россиян.
 - :no_entry_sign: Биржа CEX.io [прекратила регистрацию новых пользователей](https://t.me/CEXIO_Annoucements/201).
 - :warning: Крупнейшая NFT-биржа OpenSea, использующая для расчетов кошелек MetaMask, подтвердила, что [заблокировала и удалила аккаунты, попавшие в санкционные списки](https://fortune.com/2022/03/04/opensea-metamask-block-users-sanctions/)
 - :warning: Кошелек Metamask [недоступен в санкционных юрисдикциях Крым, Л/ДНР](https://metamask.zendesk.com/hc/en-us/articles/360059386712-Why-MetaMask-and-Infura-cannot-serve-certain-areas).
