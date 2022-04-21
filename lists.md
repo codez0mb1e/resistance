@@ -242,8 +242,8 @@ References:
 
 :no_entry: На данный момент пополнение с карт **MasterCard** и **Visa** из РФ недоступно, но торги на некоторых биржах можно вести.
 
-- [Binance](https://www.binance.com) - самая крупная криптовалютная биржа ([source](https://coinmarketcap.com/ru/rankings/exchanges/)).
-- [Coinbase](https://www.coinbase.com/) - вторая по популярности, но **имеется прецендент блокировки кошельков** резидентов РФ.
+- :o: [Binance](https://www.binance.com) - самая крупная криптовалютная биржа ([source](https://coinmarketcap.com/ru/rankings/exchanges/)), [ограничения для граждан РФ](https://www.binance.com/en/support/announcement/4887e569afdf4b1e89e024371d3a49b9).
+- :o: [Coinbase](https://www.coinbase.com/) - вторая по популярности, но **имеется прецендент блокировки кошельков** резидентов РФ.
 
 ### Сервисы поиска обменников
 
