@@ -206,16 +206,15 @@
 
 Стейблкоины и риски блокировки/потери средств:
 
-| Token | Project/Company | Target Price | Collateralization | Transparency/Audit | Decentralized | Type | Reviews | Hacks Risks | Defaults Risks | Sanctions Risks |
-| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
-| `UST` | Terra | $1 | LUNA, BTC | Medium | **+** | Algorithmic |  | Medium | The highest | **The lowest** |
-| `sUSD` | Synthetix  | $1 | ? | ? | **+** | Algorithmic | ? | ? | ? | ? |
-| **`DAI`** | MakerDAO | $1 | [USDC, ETH, WBTC](DaiStats.com) | High | + | Smart contract | [1](https://forklog.com/chto-takoe-makerdao/), [2](https://vc.ru/finance/387874-kak-natyanut-sovu-na-globus-razbiraem-kak-decentralizovannyy-steyblkoin-dai-mozhet-zashchitit-vashi-dengi) | Medium | Low | **The lowest** |
-| `USDT` | Tether | $1 | [US Treasury, Bonds, Cash](https://assets.ctfassets.net/vyse88cgwfbl/4hiNJsZ98LlZqCJHKzrLpV/2b6338482ef0093382885f80ba6f1083/Tether_Assurance-12-31-21.pdf) | Poor | - | Classic (fiat based) | [1](https://vc.ru/finance/381435-udivitelnaya-istoriya-tether-usdt-lyudi-otnesli-80-milliardov-plasticheskomu-hirurgu-kotoryy-ne-garantiruet-ih-vozvrat)| Low | Medium | The highest |
-| `USDC` | Circle | $1 | [100% Cash](https://www.centre.io/hubfs/PDF/2022%20Circle%20Examination%20Report%20February%202022.pdf?hsLang=en) | [Medium](https://www.centre.io/usdc-transparency?hsLang=en) | - | Classic (fiat based) | | Low | Low | Medium |
-| `BUSD` | Binance (via Paxos)| $1 | [Cash, US Treasury](https://paxos.com/busd/) | [Medium](https://paxos.com/attestations/) | - | Classic (fiat based) | | Low | Low | Low |
-| `USDP` | Paxos | $1 | | [Medium](https://paxos.com/attestations/) | - | Classic (fiat based) |  | Low | Low | Medium |
-| `PAXG` | [Paxos](https://paxos.com/paxgold/) | 1 oz Gold | | [Medium](https://paxos.com/attestations/) | - | Classic (fiat based)  | | Low | Low | Medium |
+| | Token | Project/Company | Target Price | Collateralization | Transparency/Audit | Decentralized | Type | Reviews | Hacks Risks | Defaults Risks | Sanctions Risks |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| :no_entry: | `UST` | Terra | $1 | LUNA, BTC | Medium | **+** | Algorithmic | [UST Falls to $0.35](https://www.coindesk.com/markets/2022/05/11/ust-falls-to-035-terra-futures-see-106m-in-liquidations/) | Medium | The highest | **The lowest** |
+| :white_check_mark: | **`DAI`** | MakerDAO | $1 | [USDC, ETH, WBTC](DaiStats.com) | High | + | Smart contract | [1](https://forklog.com/chto-takoe-makerdao/), [2](https://vc.ru/finance/387874-kak-natyanut-sovu-na-globus-razbiraem-kak-decentralizovannyy-steyblkoin-dai-mozhet-zashchitit-vashi-dengi) | Medium | Low | **The lowest** |
+| :o: | `USDT` | Tether | $1 | [US Treasury, Bonds, Cash](https://assets.ctfassets.net/vyse88cgwfbl/4hiNJsZ98LlZqCJHKzrLpV/2b6338482ef0093382885f80ba6f1083/Tether_Assurance-12-31-21.pdf) | Poor | - | Classic (fiat based) | [1](https://vc.ru/finance/381435-udivitelnaya-istoriya-tether-usdt-lyudi-otnesli-80-milliardov-plasticheskomu-hirurgu-kotoryy-ne-garantiruet-ih-vozvrat)| Low | Medium | The highest |
+| :white_check_mark: | `USDC` | Circle | $1 | [100% Cash](https://www.centre.io/hubfs/PDF/2022%20Circle%20Examination%20Report%20February%202022.pdf?hsLang=en) | [Medium](https://www.centre.io/usdc-transparency?hsLang=en) | - | Classic (fiat based) | | Low | Low | Medium |
+| :white_check_mark: | `BUSD` | Binance (via Paxos)| $1 | [Cash, US Treasury](https://paxos.com/busd/) | [Medium](https://paxos.com/attestations/) | - | Classic (fiat based) | | Low | Low | Low |
+| :o: | `USDP` | Paxos | $1 | | [Medium](https://paxos.com/attestations/) | - | Classic (fiat based) |  | Low | Low | Medium |
+| :o: | `PAXG` | [Paxos](https://paxos.com/paxgold/) | 1 oz Gold | | [Medium](https://paxos.com/attestations/) | - | Classic (fiat based)  | | Low | Low | Medium |
 
 References:
 
