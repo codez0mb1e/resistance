@@ -161,7 +161,9 @@
 - Не находится [под санкциями](#брокеры-под-санкциями), включая родительские и дочерние компании
 - Не принадлежит российскому государству или доля государства в уставном капитале невелика
 - Не принадлежит иностранной финансовой группе
-- Входит в TOP 30 брокеров по количеству активных клиентов.
+- Входит в TOP 30 брокеров по количеству активных клиентов
+- Если у брокера есть родителький банк, то он не под санкциями
+- Есть возможность отключения сделок-овернайт.
 
 #### Список надежных брокеров
 
@@ -177,8 +179,6 @@
 - Альфа-Капитал
 - МКБ Инвестиции
 - Сбербанк Инвестиции
-
-Дополнительно проверьте, что *родителький банк брокера не под санкциями*.
 
 ### Полезные ссылки
 
@@ -208,7 +208,7 @@
 
 | | Token | Project/Company | Target Price | Collateralization | Transparency/Audit | Decentralized | Type | Reviews | Hacks Risks | Defaults Risks | Sanctions Risks |
 | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
-| :no_entry: | `UST` | Terra | $1 | LUNA, BTC | Medium | **+** | Algorithmic | [UST Falls to $0.35](https://www.coindesk.com/markets/2022/05/11/ust-falls-to-035-terra-futures-see-106m-in-liquidations/) | Medium | The highest | **The lowest** |
+| :no_entry: | `UST` | Terra | $1 | LUNA, BTC | Medium | **+** | Algorithmic | [UST Falls to $0.35](https://www.coindesk.com/markets/2022/05/11/ust-falls-to-035-terra-futures-see-106m-in-liquidations/) | Medium | The highest | The lowest |
 | :white_check_mark: | **`DAI`** | MakerDAO | $1 | [USDC, ETH, WBTC](DaiStats.com) | High | + | Smart contract | [1](https://forklog.com/chto-takoe-makerdao/), [2](https://vc.ru/finance/387874-kak-natyanut-sovu-na-globus-razbiraem-kak-decentralizovannyy-steyblkoin-dai-mozhet-zashchitit-vashi-dengi) | Medium | Low | **The lowest** |
 | :o: | `USDT` | Tether | $1 | [US Treasury, Bonds, Cash](https://assets.ctfassets.net/vyse88cgwfbl/4hiNJsZ98LlZqCJHKzrLpV/2b6338482ef0093382885f80ba6f1083/Tether_Assurance-12-31-21.pdf) | Poor | - | Classic (fiat based) | [1](https://vc.ru/finance/381435-udivitelnaya-istoriya-tether-usdt-lyudi-otnesli-80-milliardov-plasticheskomu-hirurgu-kotoryy-ne-garantiruet-ih-vozvrat)| Low | Medium | The highest |
 | :white_check_mark: | `USDC` | Circle | $1 | [100% Cash](https://www.centre.io/hubfs/PDF/2022%20Circle%20Examination%20Report%20February%202022.pdf?hsLang=en) | [Medium](https://www.centre.io/usdc-transparency?hsLang=en) | - | Classic (fiat based) | | Low | Low | Medium |
@@ -242,7 +242,7 @@ References:
 :no_entry: На данный момент пополнение с карт **MasterCard** и **Visa** из РФ недоступно, но торги на некоторых биржах можно вести.
 
 - :o: [Binance](https://www.binance.com) - самая крупная криптовалютная биржа ([source](https://coinmarketcap.com/ru/rankings/exchanges/)), [ограничения для граждан РФ](https://www.binance.com/en/support/announcement/4887e569afdf4b1e89e024371d3a49b9).
-- :o: [Coinbase](https://www.coinbase.com/) - вторая по популярности, но **имеется прецендент блокировки кошельков** резидентов РФ.
+- :no_entry: [Coinbase](https://www.coinbase.com/) - вторая по популярности крипто биржа, имеется [преценденты блокировки кошельков](https://twitter.com/brian_armstrong/status/1499621509651787782?s=20&t=zGROkm-WKH5Ja6f6LR7BwA) резидентов РФ, с мая 2022 сервисы, расположенные в Евросоюзе, [не доступны с резидентами РФ](https://twitter.com/iampaulgrewal/status/1521487189431001089)
 
 ### Сервисы поиска обменников
 
@@ -262,20 +262,20 @@ References:
 
 Список надежных VPN сервисов (находятся за пределами российской юрисдикции):
 
-| Name | Has Free Plan | Support BTC payments | No-logs policy | OpenSource | Blocked/partally blocked in Russsia* | Trust level | Comments |
-| -- | -- | -- | -- | -- | -- | -- |-- |
-| **[Proton VPN](https://protonvpn.com/)** | + | + | + | [+](https://github.com/orgs/ProtonVPN/repositories) | - | Very high | |
-| [IPVanish VPN](https://www.ipvanish.com/) | - | - | + | [-](https://github.com/ipvanish) | + | High | |
-| **[Mullvad VPN](https://mullvad.net/en/)** | - | + | + | [+](https://github.com/mullvad) | - | High | [Review](https://www.forbes.com/advisor/business/software/mullvad-vpn-review/) | |
-| [Nord VPN](https://nordvpn.com/) | - | + | + | [-](https://github.com/NordSecurity) | + | High |  |
-| [ExpressVPN](https://www.expressvpn.com/) | - | + | + | [-](https://github.com/expressvpn) | + | Medium | |
-| [HighLoad VPN](https://hi-l.eu/start) | Fully free | | [+](https://hi-l.eu/privacy-policy) | [Partially](https://github.com/Jigsaw-Code/outline-server) | - | Medium | Based on ShadowSocks |
+| | Name | Has Free Plan | Support BTC payments | No-logs policy | OpenSource | Blocked/partally blocked in Russsia* | Trust level | Comments |
+| -- | -- | -- | -- | -- | -- | -- | -- |-- |
+| :white_check_mark: | [Proton VPN](https://protonvpn.com/) | + | + | + | [+](https://github.com/orgs/ProtonVPN/repositories) | [Available to block](https://www.themoscowtimes.com/2022/06/02/swiss-vpn-service-proton-says-likely-blocked-in-russia-a77871) | Very high | |
+| :warning: | [IPVanish VPN](https://www.ipvanish.com/) | - | - | + | [-](https://github.com/ipvanish) | + | High | |
+| :white_check_mark: | [Mullvad VPN](https://mullvad.net/en/) | - | + | + | [+](https://github.com/mullvad) | - | High | [Review](https://www.forbes.com/advisor/business/software/mullvad-vpn-review/) | |
+| :warning: | [Nord VPN](https://nordvpn.com/) | - | + | + | [-](https://github.com/NordSecurity) | + | High |  |
+| :warning: | [ExpressVPN](https://www.expressvpn.com/) | - | + | + | [-](https://github.com/expressvpn) | + | Medium | |
+| :o: | HighLoad VPN | Fully free | | + | [Partially](https://github.com/Jigsaw-Code/outline-server) | - | Low | Based on ShadowSocks, волонтеры сервиса 'угнали сайт' |
 
 \* [Заблокрированы РКН](https://habr.com/ru/news/t/576128/), но потенциально могут функционировать (частично или полностью).
 
 Продвинутые пользователи могут купить хостинг (VDS) и развернуть собственный VPN сервер:
 
-- [Amnezia VPN](https://amnezia.org/) ([инструкция](https://habr.com/ru/company/amnezia/blog/546424/)) 
+- [Amnezia VPN](https://amnezia.org/) ([инструкция](https://habr.com/ru/company/amnezia/blog/546424/))
 - [Outline VPN](https://getoutline.org).
 
 ### Другие инструменты обхода блокировок
