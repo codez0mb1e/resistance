@@ -51,7 +51,7 @@ solusd.tail()
 
 
 # %% ----
-conn_settings = ...
+conn_settings = ConnectionSettings(server='***.database.windows.net', database='market-data-db', username='demo', password='***')
 db_conn  = AzureDbConnection(conn_settings)
 
 db_conn.connect()
