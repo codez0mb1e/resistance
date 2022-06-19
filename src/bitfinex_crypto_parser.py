@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 """
-
 Data source: https://www.kaggle.com/code/tencars/bitfinexdataset
 """
 
@@ -15,6 +14,11 @@ from azure import AzureDbConnection, ConnectionSettings
 
 
 # %%
+
+#> ~/apps/resistance/data
+#> kaggle datasets download tencars/392-crypto-currency-pairs-at-minute-resolution
+#> unzip 392-crypto-currency-pairs-at-minute-resolution.zip
+
 input_path = "../data"
 
 # Get names and number of available currency pairs
@@ -27,6 +31,7 @@ print(pair_names[0:50])
 
 usd_pairs = [s for s in pair_names if "usd" in s]
 print(usd_pairs)
+
 
 # %%
 
@@ -46,12 +51,12 @@ def load_data(symbol, source=input_path):
 
 
 # %% ----
-solusd = load_data("solusd")
-solusd.tail()
+sample_df = load_data("ethusd")
+sample_df
+
 
 
 # %% ----
-conn_settings = ConnectionSettings(server='***.database.windows.net', database='market-data-db', username='demo', password='***')
 db_conn  = AzureDbConnection(conn_settings)
 
 db_conn.connect()
@@ -63,7 +68,7 @@ for t in db_conn.get_tables():
 min_candels_n = 10000
 
 db_mapping = {
-    'FIGI': types.VARCHAR(length=12),
+    'FIGI': types.CHAR(length=12),
     'open': types.DECIMAL(precision=19, scale=9),
     'high': types.DECIMAL(precision=19, scale=9),
     'close': types.DECIMAL(precision=19, scale=9),
@@ -82,14 +87,14 @@ for pair in usd_pairs:
     candles_df['FIGI'] = pair
     candles_df['time'] = candles_df.index
     candles_df['source_id'] = 128
-    candles_df['version'] = 'v202204'
+    candles_df['version'] = 'v202206'
     candles_df['interval'] = '1M'
 
     if candles_df.shape[0] > min_candels_n:
         print('{} rows from {} to {}'.format(candles_df.shape[0], min(candles_df['time']), max(candles_df['time'])))
 
         print(f'Starting insert {pair}...')
-        db_conn.insert(candles_df, 'Cryptocurrency', db_mapping)
+        db_conn.insert(candles_df, 'crypto', db_mapping)
     else:
         print(f'WARN: {pair} has only {candles_df.shape[0]} records')
 
