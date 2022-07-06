@@ -145,6 +145,7 @@ pair_figi_list = [figi_provider.search(p) for p in usd_pairs]
 
 
 # %% ----
+conn_settings = ConnectionSettings(server='****.database.windows.net', database='market-data-db', username='<user>', password='****')
 db_conn = AzureDbConnection(conn_settings)
 
 db_conn.connect()
