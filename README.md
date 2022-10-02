@@ -1,8 +1,14 @@
-# Антикризисный риск-менеджмент личных финансов
+# Антикризисный риск-менеджмент
 
-![Status](https://img.shields.io/badge/status-in_active_development-green.svg)
 [![Contributors Welcome](https://img.shields.io/badge/contributing-welcome-blue.svg)](CONTRIBUTING.md)
 [![GitHub license](https://img.shields.io/badge/license-CC0-blue.svg)](LICENSE)
+
+---
+:warning: Цель репозитория изменилась: сохранение финансов - полная херня по сравнению с сохранением ___безопасности жизни и здоровья для себя и своих близких___. 
+
+:warning: Начата работа работа над **[списком мер для снижения риска быть незаконно мобилизованным](mobilization-resistance.md)**.
+---
+
 
 ***Риск-менеджмент личных финансов условиях санкций и/или финансового кризиса: делаем сегодня все, чтобы завтра избежать фатальных последствий.***
 
