@@ -287,6 +287,7 @@ References:
 ### Полезные ссылки
 
 1. [Общество защиты интернета](https://t.me/safe_runet), Телеграм канал.
+2. [Безопасность. VPN](https://relocation.guide/vpn), relocation.guide.
 
 ## Список софта
 
