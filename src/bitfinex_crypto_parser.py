@@ -133,7 +133,11 @@ for pair in usd_pairs:
 
             print(f'INFO | {pair} > Starting insert to DB...')
             print('DEBUG | {} rows from {} to {}'.format(df.shape[0], min(df['time']), max(df['time'])))
-            db_conn.insert(df, 'crypto', db_mapping)
+            try:
+                db_conn.insert(df, 'crypto', db_mapping)
+            except Exception as ex:
+                print(f'ERROR | {pair} > {ex}')
+
         else:
             print(f'WARN | {pair} > No new records')
     else:
