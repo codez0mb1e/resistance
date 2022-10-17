@@ -17,7 +17,7 @@ class ConnectionSettings:
     database: str
     username: str
     password: str
-    driver: str = '{ODBC Driver 17 for SQL Server}'
+    driver: str = '{ODBC Driver 18 for SQL Server}'
     timeout: int = 30
 
 
@@ -28,10 +28,10 @@ class AzureDbConnection:
     def __init__(self, conn_settings: ConnectionSettings, echo: bool = False) -> None:
         conn_params = urllib.parse.quote_plus(
             'Driver=%s;' % conn_settings.driver +
-            'Server=tcp:%s,1433;' % conn_settings.server +
+            'Server=tcp:%s.database.windows.net,1433;' % conn_settings.server +
             'Database=%s;' % conn_settings.database +
             'Uid=%s;' % conn_settings.username +
-            'Pwd={%s};' % conn_settings.password +
+            'Pwd=%s;' % conn_settings.password +
             'Encrypt=yes;' +
             'TrustServerCertificate=no;' +
             'Connection Timeout=%s;' % conn_settings.timeout
