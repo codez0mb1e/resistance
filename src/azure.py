@@ -54,7 +54,7 @@ class AzureDbConnection:
             con=self._db,
             schema='dbo',
             name=target_table,
-            if_exists='replace',  # or append
+            if_exists='append',  # or replace
             index=False,
             chunksize=chunksize,
             dtype=db_mapping

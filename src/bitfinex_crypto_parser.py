@@ -21,7 +21,7 @@ from azure import AzureDbConnection, ConnectionSettings
 #> kaggle datasets download tencars/392-crypto-currency-pairs-at-minute-resolution
 #> unzip 392-crypto-currency-pairs-at-minute-resolution.zip
 
-input_dir = "../data"
+input_dir: str = "../data"
 
 # Get names and number of available currency pairs
 pair_names = [x[:-4] for x in os.listdir(input_dir)]
@@ -79,10 +79,10 @@ ethusd_1h.tail()
 
 # %% ----
 conn_settings = ConnectionSettings(
-    'datainstinct',
-    'market-data-db',
-    'demo',
-    '0test_test_AND_test'
+    '<server_name>',
+    '<db_name>',
+    '<user_name>',
+    '****'
 )
 
 db_conn = AzureDbConnection(conn_settings)
@@ -112,6 +112,7 @@ pd.options.mode.chained_assignment = None
 
 min_candels_n = 10000
 
+i = 1
 for pair in usd_pairs:
     print(f'INFO | {pair} > Starting read dataset...')
 
@@ -119,7 +120,7 @@ for pair in usd_pairs:
 
     if len(candles_df) > min_candels_n:
 
-        df = candles_df.loc['2022-07-01':'2022-10-01']
+        df = candles_df.loc[:'2022-10-01']
 
         if len(df) > 0:
             df = calc_ohlcv_1h(df)
@@ -131,10 +132,10 @@ for pair in usd_pairs:
             df['interval'] = '1H'
             df.drop(columns='hour', inplace=True)
 
-            print(f'INFO | {pair} > Starting insert to DB...')
+            print(f'INFO | {pair} > Starting insert to DB ({i} of {len(usd_pairs)})...')
             print('DEBUG | {} rows from {} to {}'.format(df.shape[0], min(df['time']), max(df['time'])))
             try:
-                db_conn.insert(df, 'crypto', db_mapping)
+                db_conn.insert(df, 'crypto_1h', db_mapping)
             except Exception as ex:
                 print(f'ERROR | {pair} > {ex}')
 
@@ -142,6 +143,7 @@ for pair in usd_pairs:
             print(f'WARN | {pair} > No new records')
     else:
         print(f'WARN | {pair} > Only {candles_df.shape[0]} records')
+    i += 1
 
 
 # %%
