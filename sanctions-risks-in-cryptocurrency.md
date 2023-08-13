@@ -1,6 +1,6 @@
 # Мир 2022: Как хранить криптовалюту в условиях санкций?
 
-![Status](https://img.shields.io/badge/status-archive-lightgrey.svg)
+![Status](https://img.shields.io/badge/status-нуждается_в_актуализации-orange.svg)
 
 ***Инвестиции в криптовалюту: риск-менеджмент в условии санкций***.
 

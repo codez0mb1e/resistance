@@ -1,6 +1,6 @@
 # Иммиграция: экстренная и плановая
 
-![Status](https://img.shields.io/badge/status-in_progress-green.svg)
+![Status](https://img.shields.io/badge/status-нуждается_в_актуализации-orange.svg)
 
 *Чек-лист по подготовке к экстренной и плановой релокации*.
 

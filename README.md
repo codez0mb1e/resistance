@@ -46,8 +46,6 @@
 
 ## Мобилизация
 
-![Status](https://img.shields.io/badge/status-in_progress-green.svg) ![Priority](https://img.shields.io/static/v1?label=priority&message=critical&color=red)
-
 Список мер для снижения риска быть незаконно мобилизованным:
 
 - [Кому попытаются вручить повестку?](mobilization-resistance.md#кому-попытаются-вручить-повестку)
@@ -59,8 +57,6 @@
 - [:link: Полезные ссылки](mobilization-resistance.md#link-полезные-ссылки)
 
 ## Иммиграция
-
-![Status](https://img.shields.io/badge/status-in_progress-green.svg)
 
 Чек-лист по подготовке к экстренной и плановой релокации:
 
@@ -76,9 +72,7 @@
   - [Подготовка](relocation.md#подготовка-1)
 - [:link: Полезные ссылки](relocation.md#link-полезные-ссылки)
 
-## Личные финаны условиях санкций
-
-![Status](https://img.shields.io/badge/status-archive-lightgrey.svg)
+## Личные финанcы условиях санкций
 
 Риск-менеджмент личных финансов условиях санкций и/или финансового кризиса:
 
@@ -99,10 +93,7 @@
 - [~~Общее~~ Важное](introduction-to-risks.md#общее-важное)
 - [:link: Полезные ссылки](introduction-to-risks.md#link-полезные-ссылки)
 
-
 ## Инвестиции в криптовалюту в условии санкций
-
-![Status](https://img.shields.io/badge/status-archive-lightgrey.svg) 
 
 Риск-менеджмент инвестиций в криптовалюту в условии санкций:
 
@@ -119,7 +110,6 @@
   - [:pushpin: Где хранить... а где не стоит](sanctions-risks-in-cryptocurrency.md#pushpin-где-хранить-а-где-не-стоит)
 - [Итак](sanctions-risks-in-cryptocurrency.md#итак)
 - [:link: Полезные ссылки](sanctions-risks-in-cryptocurrency.md#link-полезные-ссылки)
-
 
 ## Важные списки
 
